@@ -6,7 +6,7 @@ package com.zolo.di;
 
 import android.arch.lifecycle.ViewModelProvider;
 
-import com.zolo.viewmodel.ProjectViewModelFactory;
+
 
 import javax.inject.Singleton;
 
@@ -17,11 +17,11 @@ import dagger.Provides;
 class MyApplicationModule {
 
 
-    @Singleton
-    @Provides
-    ViewModelProvider.Factory provideViewModelFactory(
-            ViewModelSubComponent.Builder viewModelSubComponent) {
-
-        return new ProjectViewModelFactory(viewModelSubComponent.build());
-    }
+//    @Singleton
+//    @Provides
+//    ViewModelProvider.Factory provideViewModelFactory(
+//            ViewModelSubComponent.Builder viewModelSubComponent) {
+//
+//        return new ProjectViewModelFactory(viewModelSubComponent.build());
+//    }
 }
