@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Dagger</string>
+
+    <string name="login">Login</string>
+    <string name="email_hint">Enter email</string>
+    <string name="password_hint">Enter password</string>
+</resources>
