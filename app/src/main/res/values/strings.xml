@@ -3,5 +3,8 @@
 
     <string name="login">Login</string>
     <string name="email_hint">Enter email</string>
+    <string name="phonenumber_hint">Enter phonenumber</string>
     <string name="password_hint">Enter password</string>
+    <string name="forget_password">Forgot password?</string>
+    <string name="register">Create Account</string>
 </resources>

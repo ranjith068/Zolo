@@ -7,12 +7,16 @@ package com.zolo.di;
 import android.app.Application;
 
 import com.zolo.MyApplication;
+import com.zolo.view.ui.fragments.LoginFragment;
+import com.zolo.viewmodel.LoginViewModel;
+
+import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
 
-
+@Singleton
 @Component(modules = { AndroidInjectionModule.class, MyApplicationModule.class,MainActivityModule.class})
 public interface MyApplicationComponent {
 
@@ -23,4 +27,5 @@ public interface MyApplicationComponent {
         MyApplicationComponent build();
     }
     void inject(MyApplication myApplication);
+
 }

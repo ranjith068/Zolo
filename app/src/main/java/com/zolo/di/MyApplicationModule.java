@@ -4,9 +4,12 @@ package com.zolo.di;
  * Created by ranjith on 5/9/17.
  */
 
+import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
 
+import com.zolo.viewmodel.LoginViewModel;
+import com.zolo.viewmodel.ProjectViewModelFactory;
 
 import javax.inject.Singleton;
 
@@ -17,6 +20,7 @@ import dagger.Provides;
 class MyApplicationModule {
 
 
+
 //    @Singleton
 //    @Provides
 //    ViewModelProvider.Factory provideViewModelFactory(
@@ -24,4 +28,5 @@ class MyApplicationModule {
 //
 //        return new ProjectViewModelFactory(viewModelSubComponent.build());
 //    }
+
 }

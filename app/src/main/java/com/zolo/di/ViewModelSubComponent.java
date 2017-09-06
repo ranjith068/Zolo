@@ -5,6 +5,7 @@ package com.zolo.di;
 
 import com.zolo.viewmodel.LoginViewModel;
 
+import dagger.Provides;
 import dagger.Subcomponent;
 
 

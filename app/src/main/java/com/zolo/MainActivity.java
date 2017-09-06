@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.os.Bundle;
 
 import com.zolo.view.ui.fragments.LoginFragment;
+import com.zolo.view.ui.fragments.RegisterFragment;
 
 import javax.inject.Inject;
 
@@ -29,16 +30,16 @@ public class MainActivity extends LifecycleActivity implements HasSupportFragmen
 
     }
 
-//    /** Shows the project detail fragment */
-//    public void show(Project project) {
-//        ProjectFragment projectFragment = ProjectFragment.forProject(project.name);
-//
-//        getSupportFragmentManager()
-//                .beginTransaction()
-//                .addToBackStack("project")
-//                .replace(R.id.fragment_container,
-//                        projectFragment, null).commit();
-//    }
+    /** Shows the project detail fragment */
+    public void show() {
+        RegisterFragment registerFragment = new RegisterFragment();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .addToBackStack("RegisterFragment")
+                .replace(R.id.fragment_container,
+                        registerFragment, "RegisterFragment").commit();
+    }
 
     @Override
     public DispatchingAndroidInjector<Fragment> supportFragmentInjector() {
