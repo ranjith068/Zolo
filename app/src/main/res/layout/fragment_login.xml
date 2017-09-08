@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -8,67 +9,153 @@
         <variable
             name="loginViewModel"
             type="com.zolo.viewmodel.LoginViewModel" />
-        <variable name="handler" type="com.zolo.viewmodel.LoginViewModel" />
+
+        <variable
+            name="handler"
+            type="com.zolo.viewmodel.LoginViewModel" />
     </data>
 
-    <RelativeLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context="com.zolo.view.ui.fragments.LoginFragment">
+        android:fillViewport="true"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:focusableInTouchMode="true"
             android:orientation="vertical">
 
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/phonenumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/phonenumber_hint"
-                android:text="@={loginViewModel.phonenumber}"
-                android:inputType="textPhonetic|phone" />
 
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/password"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/password_hint"
-                android:text="@={loginViewModel.password}"
-                android:inputType="textPassword" />
+                android:layout_height="200dp">
 
-            <Button
-                android:id="@+id/login"
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cartoon" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="@{handler::onClick}"
-                android:text="@string/login"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context="com.zolo.view.ui.fragments.LoginFragment">
 
-            <android.support.v7.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:id="@+id/forget_password"
-                android:onClick="@{handler::onForgetPaswordClick}"
-                android:text="@string/forget_password"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <Button
-                android:id="@+id/register"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="@{handler::onRegisterClick}"
-                android:text="@string/register"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin">
 
-            <!--<ProgressBar-->
-                <!--android:id="@+id/login_progress"-->
-                <!--style="?android:attr/progressBarStyleLarge"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="8dp"-->
-                <!--android:layout_gravity="center_horizontal"-->
-                <!--android:visibility="@{loginViewModel.busy}" />-->
+                        <ImageView
+                            android:id="@+id/callIV"
+                            android:layout_width="@dimen/iv_size"
+                            android:layout_height="@dimen/iv_size"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_call" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_toRightOf="@+id/callIV">
+
+                            <EditText
+                                android:id="@+id/phonenumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/phonenumber_hint"
+                                android:textColorHint="@color/colorButton"
+                                android:inputType="textPhonetic|phone"
+                                android:text="@={loginViewModel.phonenumber}" />
+                        </android.support.design.widget.TextInputLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                        <ImageView
+                            android:id="@+id/lockIV"
+                            android:layout_width="@dimen/iv_size"
+                            android:layout_height="@dimen/iv_size"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_lock" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+
+                            android:layout_toRightOf="@+id/lockIV">
+
+                            <EditText
+                                android:id="@+id/password"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/password_hint"
+                                android:textColorHint="@color/colorButton"
+                                android:inputType="textPassword"
+                                android:text="@={loginViewModel.password}" />
+                        </android.support.design.widget.TextInputLayout>
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/login"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:layout_marginLeft="@dimen/button_margin"
+                        android:layout_marginRight="@dimen/button_margin"
+                        android:background="@color/colorButton"
+                        android:onClick="@{handler::onClick}"
+                        android:text="@string/login" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/forget_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:onClick="@{handler::onForgetPaswordClick}"
+                        android:text="@string/forget_password" />
+
+                    <Button
+                        android:id="@+id/register"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:layout_marginLeft="@dimen/button_margin"
+                        android:layout_marginRight="@dimen/button_margin"
+                        android:background="@drawable/rounded_button_bg"
+                        android:onClick="@{handler::onRegisterClick}"
+                        android:text="@string/create_acc"
+                        android:textColor="@color/colorWhite" />
+
+                </LinearLayout>
+            </RelativeLayout>
         </LinearLayout>
-    </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
 </layout>

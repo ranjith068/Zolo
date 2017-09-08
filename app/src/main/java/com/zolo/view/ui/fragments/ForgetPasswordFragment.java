@@ -13,6 +13,8 @@ import com.zolo.R;
 import com.zolo.databinding.FragmentForgetPasswordBinding;
 import com.zolo.databinding.FragmentRegisterBinding;
 import com.zolo.di.Injectable;
+import com.zolo.viewmodel.ForgetPasswordViewModel;
+import com.zolo.viewmodel.LoginViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,9 +22,6 @@ import com.zolo.di.Injectable;
 public class ForgetPasswordFragment extends LifecycleFragment implements Injectable {
     private FragmentForgetPasswordBinding binding;
 
-
-//    @Inject
-//    ViewModelProvider.Factory viewModelFactory;
 
     public ForgetPasswordFragment() {
         // Required empty public constructor
@@ -34,6 +33,11 @@ public class ForgetPasswordFragment extends LifecycleFragment implements Injecta
                              Bundle savedInstanceState) {
 
          binding = DataBindingUtil.inflate(inflater, R.layout.fragment_forget_password, container, false);
+        ForgetPasswordViewModel fgPwdViewModel = new ForgetPasswordViewModel("");
+
+
+        binding.setForgetPasswordViewModel(fgPwdViewModel);
+        binding.setHandler(fgPwdViewModel);
 
 
         // Inflate the layout for this fragment

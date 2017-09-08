@@ -14,6 +14,7 @@ import com.zolo.databinding.FragmentLoginBinding;
 import com.zolo.databinding.FragmentRegisterBinding;
 import com.zolo.di.Injectable;
 import com.zolo.viewmodel.LoginViewModel;
+import com.zolo.viewmodel.RegisterViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,7 +37,9 @@ public class RegisterFragment extends LifecycleFragment implements Injectable {
 
          binding = DataBindingUtil.inflate(inflater, R.layout.fragment_register, container, false);
 
-
+        RegisterViewModel registerViewModel = new RegisterViewModel("", "","","");
+        binding.setRegisterViewModel(registerViewModel);
+        binding.setHandler(registerViewModel);
         // Inflate the layout for this fragment
         return binding.getRoot();
     }

@@ -3,6 +3,7 @@ package com.zolo.utils;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
@@ -38,6 +39,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String KEY_PHONENUMBER = "phonenumber";
     private static final String KEY_EMAIL = "email";
     private static final String KEY_PASSWORD = "password";
+    private static final String KEY_NAME = "name";
 
 
     @Inject
@@ -67,7 +69,7 @@ public class Database extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_USERS + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," +  KEY_PHONENUMBER + " TEXT,"+  KEY_EMAIL + " TEXT,"+ KEY_PASSWORD + " TEXT"
+                + KEY_ID + " INTEGER PRIMARY KEY," +  KEY_PHONENUMBER + " TEXT,"+  KEY_EMAIL + " TEXT,"+  KEY_NAME + " TEXT,"+ KEY_PASSWORD + " TEXT"
                 + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
@@ -89,6 +91,7 @@ public class Database extends SQLiteOpenHelper {
         values.put(KEY_PHONENUMBER, user.get_phonenumber()); // Contact Name
         values.put(KEY_EMAIL, user.get_email());
         values.put(KEY_PASSWORD, user.get_password());
+        values.put(KEY_NAME, user.get_name());
         // Inserting Row
         db.insert(TABLE_USERS, null, values);
         db.close(); // Closing database connection
@@ -135,5 +138,39 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("delete from " + TABLE_USERS);
         db.close();
+    }
+
+    boolean phoneNumberExists(String phonenumber) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        long count = DatabaseUtils.queryNumEntries(db,
+                "users", "phonenumber = ?", new String[] { phonenumber });
+        return count > 0;
+    }
+
+    boolean passwordExists(String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        long count = DatabaseUtils.queryNumEntries(db,
+                "users", "password = ?", new String[] { password });
+        return count > 0;
+
+
+    }
+
+    boolean loginExists(String phonenumber,String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor mCursor = db.rawQuery("SELECT * FROM " + TABLE_USERS + " WHERE    phonenumber = ? and password = ?", new String[]{phonenumber,password});
+
+        if (mCursor.moveToFirst())
+        {
+            mCursor.close();
+            return true;
+            /* record exist */
+        }
+        else
+        {
+            mCursor.close();
+            return false;
+            /* record not exist */
+        }
     }
 }

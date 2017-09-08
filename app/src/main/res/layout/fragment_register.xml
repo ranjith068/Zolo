@@ -8,55 +8,196 @@
         <variable
             name="registerViewModel"
             type="com.zolo.viewmodel.RegisterViewModel" />
-        <variable name="handler" type="com.zolo.viewmodel.RegisterViewModel" />
+
+        <variable
+            name="handler"
+            type="com.zolo.viewmodel.RegisterViewModel" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context="com.zolo.view.ui.fragments.LoginFragment">
+        android:background="@color/colorPrimary"
+        tools:context="com.zolo.view.ui.fragments.RegisterFragment">
 
-        <LinearLayout
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:scrollbars="none">
 
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/phonenumber"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/phonenumber_hint"
-                android:text="@={registerViewModel.phonenumber}"
-                android:inputType="textEmailAddress" />
+                android:orientation="vertical">
 
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/password_hint"
-                android:text="@={registerViewModel.password}"
-                android:inputType="textPassword" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
 
+                    <TextView
+                        android:id="@+id/head"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="@string/register"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="40sp" />
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/head"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:gravity="center"
+                        android:text="@string/sub_head"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="14sp" />
+                </RelativeLayout>
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/vertical_margin"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_weight="1">
 
-            <Button
-                android:id="@+id/register"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="@{handler::onRegisterClick}"
-                android:text="@string/register"/>
+                    <ImageView
+                        android:id="@+id/callIV"
+                        android:layout_width="@dimen/iv_size"
+                        android:layout_height="@dimen/iv_size"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_call" />
 
-            <!--<ProgressBar-->
-                <!--android:id="@+id/login_progress"-->
-                <!--style="?android:attr/progressBarStyleLarge"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="8dp"-->
-                <!--android:layout_gravity="center_horizontal"-->
-                <!--android:visibility="@{loginViewModel.busy}" />-->
-        </LinearLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_toRightOf="@+id/callIV">
+
+                        <EditText
+                            android:id="@+id/phonenumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/phonenumber_hint"
+                            android:inputType="textPhonetic|phone"
+                            android:text="@={registerViewModel.phonenumber}"
+                            android:textColorHint="@color/colorButton" />
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/vertical_margin"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/mailIV"
+                        android:layout_width="@dimen/iv_size"
+                        android:layout_height="@dimen/iv_size"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_email" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_toRightOf="@+id/mailIV">
+
+                        <EditText
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/email_hint"
+                            android:inputType="textEmailAddress"
+                            android:text="@={registerViewModel.email}" />
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/vertical_margin"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/nameIV"
+                        android:layout_width="@dimen/iv_size"
+                        android:layout_height="@dimen/iv_size"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_contacts" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_toRightOf="@+id/nameIV">
+
+                        <EditText
+                            android:id="@+id/name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/name_hint"
+                            android:inputType="textPersonName"
+                            android:text="@={registerViewModel.name}" />
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/vertical_margin"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/lockIV"
+                        android:layout_width="@dimen/iv_size"
+                        android:layout_height="@dimen/iv_size"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_lock" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_toRightOf="@+id/lockIV">
+
+                        <EditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/password_hint"
+                            android:inputType="textPassword"
+                            android:text="@={registerViewModel.password}" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/button_margin"
+                    android:layout_marginRight="@dimen/button_margin"
+                    android:layout_marginTop="@dimen/vertical_margin"
+                    android:background="@color/colorButton"
+                    android:onClick="@{handler::onRegisterClick}"
+                    android:text="@string/register" />
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
     </RelativeLayout>
 </layout>

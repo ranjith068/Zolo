@@ -15,80 +15,31 @@ import javax.inject.Inject;
  * Created by ranjith on 12/5/17.
  */
 
-//public class LoginViewModel extends ViewModel {
-//
-//    private Context context;
-//
-//    @Inject
-//    public LoginViewModel(MyApplication application) {
-//
-//        this.context = application;
-//
-//
-//    }
-//
-//
-//}
 
 public class ForgetPasswordViewModel extends BaseObservable  {
-    private String phonenumber;
+    private String email;
 
-    Context context;
-//    private int busy;
 
     @Inject
-    public ForgetPasswordViewModel(String phonenumber, String password) {
-        this.phonenumber = phonenumber;
-//        this.password = password;
-//        this.busy = View.GONE;
+    public ForgetPasswordViewModel(String email) {
+        this.email = email;
     }
 
-//    public LoginViewModel(LoginViewModel lvm) {
-//        this.email = lvm.email;
-//        this.password = lvm.password;
-//        this.busy = lvm.busy;
-//    }
+
 
     @Bindable
-    public String getPhonenumber() {
-        return this.phonenumber;
+    public String getEmail() {
+        return this.email;
     }
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
-        notifyPropertyChanged(R.id.phonenumber);
+    public void setEmail(String email) {
+        this.email = email;
+        notifyPropertyChanged(R.id.email);
     }
 
-//    @Bindable
-//    public String getPassword() {
-//        return this.password;
-//    }
-//    public void setPassword(String password) {
-//        this.password = password;
-//        notifyPropertyChanged(R.id.password);
-//    }
-
-//    @Bindable
-//    public int getBusy() {
-//        return this.busy;
-//    }
-//    public void setBusy(int busy) {
-//        this.busy = busy;
-//        notifyPropertyChanged(R.id.login_progress);
-//    }
+    public void onResetClick(final View view) {
 
 
-
-
-    public void onRegisterClick(final View view) {
-
-        Toast.makeText(view.getContext(), "register", Toast.LENGTH_SHORT).show();
-
-//        RegisterFragment fragment = new RegisterFragment();
-//        view.getContext().getSupportFragmentManager().beginTransaction()
-//                .add(R.id.fragment_container, fragment, "LoginFragment").commit();
-
-
-        ((MainActivity) view.getContext()).show();
+        ((MainActivity) view.getContext()).reset();
 
     }
 

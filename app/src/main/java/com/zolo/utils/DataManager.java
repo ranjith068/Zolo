@@ -38,6 +38,23 @@ public class DataManager {
          mDbHelper.addUser(user);
     }
 
+    public int getCount() throws Exception {
+        return mDbHelper.getUsersCount();
+    }
+
+
+    public boolean checkNumber(String phonenumber) throws Exception {
+        return mDbHelper.phoneNumberExists(phonenumber);
+    }
+
+    public boolean checkPassword(String password) throws Exception {
+        return mDbHelper.passwordExists(password);
+    }
+
+    public boolean checkLogin(String phonenumber,String password) throws Exception {
+        return mDbHelper.loginExists(phonenumber,password);
+    }
+
 //    public User getUser(Long userId) throws Resources.NotFoundException, NullPointerException {
 //        return mDbHelper.getUser(userId);
 //    }

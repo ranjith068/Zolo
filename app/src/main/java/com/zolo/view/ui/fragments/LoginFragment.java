@@ -53,16 +53,6 @@ public class LoginFragment extends LifecycleFragment implements Injectable {
 
         LoginViewModel loginViewModel = new LoginViewModel("", "");
 
-//        LoginViewModel loginViewModel = viewModelSubComponent.loginViewModel();
-
-        mDataManager.saveData("hello","hellotest");
-
-        if(mDataManager != null)
-        {
-            Log.d("xxx","Successfully injected sharedpreference object");
-
-            Toast.makeText(getActivity(), ""+mDataManager.getData("hello"), Toast.LENGTH_SHORT).show();
-        }
 
         binding.setLoginViewModel(loginViewModel);
         binding.setHandler(loginViewModel);
