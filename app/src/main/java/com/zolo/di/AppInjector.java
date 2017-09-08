@@ -23,7 +23,7 @@ public class AppInjector {
 
     public static void init(MyApplication mvvmApplication) {
 
-        DaggerMyApplicationComponent.builder().application(mvvmApplication)
+        DaggerMyApplicationComponent.builder().myApplicationModule(new MyApplicationModule(mvvmApplication))
                 .build().inject(mvvmApplication);
 
 

@@ -1,10 +1,14 @@
 package com.zolo;
 
 import android.arch.lifecycle.LifecycleActivity;
+import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
+import com.zolo.utils.DataManager;
 import com.zolo.view.ui.fragments.LoginFragment;
 import com.zolo.view.ui.fragments.RegisterFragment;
 
@@ -18,10 +22,12 @@ public class MainActivity extends LifecycleActivity implements HasSupportFragmen
     @Inject
     DispatchingAndroidInjector<Fragment> dispatchingAndroidInjector;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         LoginFragment fragment = new LoginFragment();
 
@@ -30,7 +36,7 @@ public class MainActivity extends LifecycleActivity implements HasSupportFragmen
 
     }
 
-    /** Shows the project detail fragment */
+    /** Shows the register fragment */
     public void show() {
         RegisterFragment registerFragment = new RegisterFragment();
 

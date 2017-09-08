@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 
 import com.zolo.di.AppInjector;
+import com.zolo.utils.DataManager;
 
 
 import javax.inject.Inject;
@@ -18,6 +19,9 @@ import dagger.android.HasActivityInjector;
 public class MyApplication extends Application implements HasActivityInjector {
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
+
+    @Inject
+    DataManager dataManager;
 
     @Override
     public void onCreate() {

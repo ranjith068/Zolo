@@ -16,6 +16,8 @@ public interface ViewModelSubComponent {
         ViewModelSubComponent build();
     }
 
+//    ViewModelSubComponent getViewModelSubComponent();
+
 //    LoginViewModel projectListViewModel();
     LoginViewModel loginViewModel();
 }

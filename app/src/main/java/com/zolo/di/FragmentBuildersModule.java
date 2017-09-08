@@ -3,6 +3,7 @@ package com.zolo.di;
 
 
 
+import com.zolo.view.ui.fragments.ForgetPasswordFragment;
 import com.zolo.view.ui.fragments.LoginFragment;
 import com.zolo.view.ui.fragments.RegisterFragment;
 
@@ -16,6 +17,9 @@ public abstract class FragmentBuildersModule {
 
     @ContributesAndroidInjector
     abstract RegisterFragment contributeRegisterFragment();
+
+    @ContributesAndroidInjector
+    abstract ForgetPasswordFragment contributeForgetPasswordFragment();
 //
 //    @ContributesAndroidInjector
 //    abstract ProjectListFragment contributeProjectListFragment();
