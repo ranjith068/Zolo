@@ -61,6 +61,16 @@ public class ProfileViewModel extends BaseObservable  {
 
 
 
+    public void onClick(final View view) {
+
+        String phonenumber = this.phonenumber;
+        String name = this.name;
+        String email = this.email;
+
+        ((ProfileActivity) view.getContext()).update(phonenumber,name,email);
+
+    }
+
     public void onLogoutClick(final View view) {
 
 

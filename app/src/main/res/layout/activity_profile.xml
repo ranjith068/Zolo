@@ -61,11 +61,11 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:layout_marginTop="@dimen/activity_vertical_margin"
                         android:layout_marginBottom="@dimen/activity_vertical_margin"
                         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                        android:layout_marginRight="@dimen/activity_horizontal_margin">
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_weight="1">
 
                         <ImageView
                             android:id="@+id/callIV"
@@ -85,20 +85,20 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/phonenumber"
-                                android:textColorHint="@color/colorButton"
                                 android:inputType="textPhonetic|phone"
-                                android:text="@={profileViewModel.phonenumber}" />
+                                android:text="@={profileViewModel.phonenumber}"
+                                android:textColorHint="@color/colorButton" />
                         </android.support.design.widget.TextInputLayout>
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:layout_marginTop="@dimen/activity_vertical_margin"
                         android:layout_marginBottom="@dimen/activity_vertical_margin"
                         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                        android:layout_marginRight="@dimen/activity_horizontal_margin">
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_weight="1">
 
                         <ImageView
                             android:id="@+id/nameIV"
@@ -117,20 +117,21 @@
                                 android:id="@+id/name"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/phonenumber"
-                                android:textColorHint="@color/colorButton"
-                                android:inputType="textPhonetic|phone"
-                                android:text="@={profileViewModel.name}" />
+                                android:hint="@string/name"
+                                android:inputType="textPersonName"
+                                android:text="@={profileViewModel.name}"
+                                android:textColorHint="@color/colorButton" />
                         </android.support.design.widget.TextInputLayout>
                     </RelativeLayout>
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:layout_marginTop="@dimen/activity_vertical_margin"
                         android:layout_marginBottom="@dimen/activity_vertical_margin"
                         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                        android:layout_marginRight="@dimen/activity_horizontal_margin">
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_weight="1">
 
                         <ImageView
                             android:id="@+id/emailIV"
@@ -149,26 +150,42 @@
                                 android:id="@+id/email"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/phonenumber"
-                                android:textColorHint="@color/colorButton"
-                                android:inputType="textPhonetic|phone"
-                                android:text="@={profileViewModel.email}" />
+                                android:hint="@string/email"
+                                android:inputType="textEmailAddress"
+                                android:text="@={profileViewModel.email}"
+                                android:textColorHint="@color/colorButton" />
                         </android.support.design.widget.TextInputLayout>
                     </RelativeLayout>
 
-                    <Button
-                        android:id="@+id/logout"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/activity_vertical_margin"
                         android:layout_marginLeft="@dimen/button_margin"
                         android:layout_marginRight="@dimen/button_margin"
-                        android:background="@drawable/rounded_button_bg"
-                        android:onClick="@{handler::onLogoutClick}"
-                        android:text="@string/logout"
-                        android:textColor="@color/colorWhite" />
+                        android:orientation="horizontal">
 
+                        <Button
+                            android:id="@+id/update"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/colorButton"
+                            android:layout_marginRight="@dimen/vertical_margin"
+                            android:onClick="@{handler::onClick}"
+                            android:text="@string/update" />
+
+                        <Button
+                            android:id="@+id/logout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+
+                            android:background="@drawable/rounded_button_bg"
+                            android:onClick="@{handler::onLogoutClick}"
+                            android:text="@string/logout"
+                            android:textColor="@color/colorWhite" />
+                    </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>

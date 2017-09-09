@@ -97,29 +97,21 @@ public class Database extends SQLiteOpenHelper {
         db.close(); // Closing database connection
     }
 
-//    public List<UserModel> getAllLocations() {
-//        List<UserModel> contactList = new ArrayList<UserModel>();
-//        // Select All Query
-//        String selectQuery = "SELECT  * FROM " + TABLE_USERS;
-//
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        Cursor cursor = db.rawQuery(selectQuery, null);
-//
-//        // looping through all rows and adding to list
-//        if (cursor.moveToFirst()) {
-//            do {
-//                UserModel contact = new UserModel();
-//                contact.setID(Integer.parseInt(cursor.getString(0)));
-//                contact.setName(cursor.getString(1));
-//                // Adding contact to list
-//                contactList.add(contact);
-//            } while (cursor.moveToNext());
-//        }
-//
-//        // return contact list
-//        return contactList;
-//    }
 
+
+    public void updateUser(UserModel user,String phonenumber) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_PHONENUMBER, user.get_phonenumber()); // Contact Name
+        values.put(KEY_EMAIL, user.get_email());
+        values.put(KEY_NAME, user.get_name());
+
+//        db.insert(TABLE_USERS, null, values);
+
+        db.update(TABLE_USERS,values,"phonenumber = ?",new String[]{phonenumber});
+        db.close(); // Closing database connection
+    }
 
     // Getting events Count
     public int getUsersCount() {

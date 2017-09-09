@@ -67,7 +67,21 @@ public class ProfileActivity extends LifecycleActivity implements HasSupportFrag
 
     public void logout() {
         mDataManager.saveData("login","");
+        startActivity(new Intent(ProfileActivity.this,MainActivity.class));
         finish();
     }
+
+    public void update(String updatedPhoneNumber,String updatedName,String updatedEmail) {
+        try {
+            mDataManager.updateUser(new UserModel(updatedPhoneNumber, updatedEmail, updatedName),phonenumber);
+
+            Toast.makeText(this,"Updated...",Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this,"Cannot be Updated...",Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
 
 }

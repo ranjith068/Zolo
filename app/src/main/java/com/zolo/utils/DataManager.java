@@ -38,6 +38,11 @@ public class DataManager {
          mDbHelper.addUser(user);
     }
 
+
+    public void updateUser(UserModel user,String phonenumber) throws Exception {
+        mDbHelper.updateUser(user,phonenumber);
+    }
+
     public int getCount() throws Exception {
         return mDbHelper.getUsersCount();
     }

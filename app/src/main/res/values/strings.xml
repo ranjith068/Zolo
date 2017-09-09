@@ -2,10 +2,13 @@
     <string name="app_name">Zolo</string>
 
     <string name="login">Login</string>
+    <string name="update">Update</string>
     <string name="email_hint">Enter email</string>
     <string name="name_hint">Enter name</string>
     <string name="phonenumber_hint">Enter phonenumber</string>
     <string name="phonenumber">Phonenumber</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
     <string name="password_hint">Enter password</string>
     <string name="forget_password">Forgot password?</string>
     <string name="profile">Profile</string>

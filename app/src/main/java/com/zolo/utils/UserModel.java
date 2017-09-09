@@ -59,4 +59,11 @@ public class UserModel {
         this._password = _password;
         this._name = _name;
     }
+
+    public UserModel(String _phonenumber, String _email,String _name) {
+
+        this._phonenumber = _phonenumber;
+        this._email = _email;
+        this._name = _name;
+    }
 }
