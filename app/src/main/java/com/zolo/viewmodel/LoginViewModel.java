@@ -1,28 +1,13 @@
 package com.zolo.viewmodel;
 
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.ViewModel;
-import android.content.Context;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-import android.databinding.Observable;
-import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
+
 
 import com.zolo.MainActivity;
-import com.zolo.MyApplication;
+
 import com.zolo.R;
-import com.zolo.utils.DataManager;
-import com.zolo.view.ui.fragments.LoginFragment;
-import com.zolo.view.ui.fragments.RegisterFragment;
-
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
-import dagger.Provides;
 
 /**
  * Created by ranjith on 12/5/17.

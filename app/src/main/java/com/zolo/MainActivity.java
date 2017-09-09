@@ -100,13 +100,13 @@ public class MainActivity extends LifecycleActivity implements HasSupportFragmen
 
                             if(mDataManager.checkLogin(phonenumber,password)) {
 
-//                                Snackbar.make(frameLayout, "Login", Snackbar.LENGTH_SHORT).show();
 
                                 mDataManager.saveData("login","sucess");
 
                                 mDataManager.saveData("phonenumber",mDataManager.getUser(phonenumber).get_phonenumber());
                                 mDataManager.saveData("name",mDataManager.getUser(phonenumber).get_name());
                                 mDataManager.saveData("email",mDataManager.getUser(phonenumber).get_email());
+
                                 startActivity(new Intent(MainActivity.this,ProfileActivity.class));
                                 finish();
                             }else{
@@ -144,7 +144,7 @@ public class MainActivity extends LifecycleActivity implements HasSupportFragmen
                                 }else{
                                     if(isEmailValid(email)){
 
-                                        mDataManager.createUser(new UserModel(phonenumber, email, password, name));
+                                        mDataManager.createUser(new UserModel(phonenumber, email, name,password));
 
                                         Snackbar.make(frameLayout, "Register user success...", Snackbar.LENGTH_SHORT).show();
 

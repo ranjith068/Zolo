@@ -52,12 +52,12 @@ public class UserModel {
         this._password = _password;
     }
 
-    public UserModel(String _phonenumber, String _email, String _password,String _name) {
+    public UserModel(String _phonenumber, String _email,String _name, String _password) {
 
         this._phonenumber = _phonenumber;
         this._email = _email;
-        this._password = _password;
         this._name = _name;
+        this._password = _password;
     }
 
     public UserModel(String _phonenumber, String _email,String _name) {

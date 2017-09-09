@@ -26,10 +26,7 @@ public class ProfileViewModel extends BaseObservable  {
         this.phonenumber = phonenumber;
         this.name = name;
         this.email = email;
-
     }
-
-
 
     @Bindable
     public String getPhonenumber() {
@@ -77,9 +74,6 @@ public class ProfileViewModel extends BaseObservable  {
         ((ProfileActivity) view.getContext()).logout();
 
     }
-
-
-
 
 
 }

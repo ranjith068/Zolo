@@ -90,8 +90,9 @@ public class Database extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(KEY_PHONENUMBER, user.get_phonenumber()); // Contact Name
         values.put(KEY_EMAIL, user.get_email());
-        values.put(KEY_PASSWORD, user.get_password());
         values.put(KEY_NAME, user.get_name());
+        values.put(KEY_PASSWORD, user.get_password());
+
         // Inserting Row
         db.insert(TABLE_USERS, null, values);
         db.close(); // Closing database connection
@@ -103,9 +104,11 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_PHONENUMBER, user.get_phonenumber()); // Contact Name
+        values.put(KEY_PHONENUMBER, user.get_phonenumber());
         values.put(KEY_EMAIL, user.get_email());
         values.put(KEY_NAME, user.get_name());
+//        values.put(KEY_PASSWORD, user.get_password());
+
 
 //        db.insert(TABLE_USERS, null, values);
 
