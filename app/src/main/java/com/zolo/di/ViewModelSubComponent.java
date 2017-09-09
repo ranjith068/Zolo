@@ -3,6 +3,7 @@ package com.zolo.di;
 
 
 
+import com.zolo.viewmodel.ForgetPasswordViewModel;
 import com.zolo.viewmodel.LoginViewModel;
 
 import dagger.Provides;
@@ -16,8 +17,8 @@ public interface ViewModelSubComponent {
         ViewModelSubComponent build();
     }
 
-//    ViewModelSubComponent getViewModelSubComponent();
 
-//    LoginViewModel projectListViewModel();
-    LoginViewModel loginViewModel();
+//    LoginViewModel loginViewModel();
+
+//    ForgetPasswordViewModel forgetPasswordViewModel();
 }

@@ -69,7 +69,7 @@ public class Database extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_USERS + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," +  KEY_PHONENUMBER + " TEXT,"+  KEY_EMAIL + " TEXT,"+  KEY_NAME + " TEXT,"+ KEY_PASSWORD + " TEXT"
+                +  KEY_PHONENUMBER + " TEXT PRIMARY KEY,"+  KEY_EMAIL + " TEXT,"+  KEY_NAME + " TEXT,"+ KEY_PASSWORD + " TEXT"
                 + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
@@ -172,5 +172,20 @@ public class Database extends SQLiteOpenHelper {
             return false;
             /* record not exist */
         }
+    }
+
+    public UserModel getUser(String phonenumber) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(TABLE_USERS, new String[] {
+                        KEY_PHONENUMBER, KEY_EMAIL ,KEY_NAME,KEY_PASSWORD}, KEY_PHONENUMBER + "=?",
+                new String[] { phonenumber }, null, null, null, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        UserModel user = new UserModel(
+                cursor.getString(0), cursor.getString(1),cursor.getString(2),cursor.getString(3));
+        // return contact
+        return user;
     }
 }

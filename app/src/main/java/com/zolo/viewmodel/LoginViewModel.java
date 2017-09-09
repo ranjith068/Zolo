@@ -74,7 +74,7 @@ public class LoginViewModel extends BaseObservable  {
 
     public void onRegisterClick(final View view) {
 
-        Toast.makeText(view.getContext(), "register", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(view.getContext(), "register", Toast.LENGTH_SHORT).show();
 
         ((MainActivity) view.getContext()).show();
 
@@ -82,7 +82,7 @@ public class LoginViewModel extends BaseObservable  {
 
     public void onForgetPaswordClick(final View view) {
 
-        Toast.makeText(view.getContext(), "forgot password", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(view.getContext(), "forgot password", Toast.LENGTH_SHORT).show();
 
         ((MainActivity) view.getContext()).forgotPassWord();
 

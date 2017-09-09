@@ -55,7 +55,7 @@ public class DataManager {
         return mDbHelper.loginExists(phonenumber,password);
     }
 
-//    public User getUser(Long userId) throws Resources.NotFoundException, NullPointerException {
-//        return mDbHelper.getUser(userId);
-//    }
+    public UserModel getUser(String phonenumber) throws  Exception {
+        return mDbHelper.getUser(phonenumber);
+    }
 }

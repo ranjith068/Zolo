@@ -53,7 +53,6 @@ public class LoginFragment extends LifecycleFragment implements Injectable {
 
         LoginViewModel loginViewModel = new LoginViewModel("", "");
 
-
         binding.setLoginViewModel(loginViewModel);
         binding.setHandler(loginViewModel);
 

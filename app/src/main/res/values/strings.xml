@@ -1,13 +1,16 @@
 <resources>
-    <string name="app_name">Dagger</string>
+    <string name="app_name">Zolo</string>
 
     <string name="login">Login</string>
     <string name="email_hint">Enter email</string>
     <string name="name_hint">Enter name</string>
     <string name="phonenumber_hint">Enter phonenumber</string>
+    <string name="phonenumber">Phonenumber</string>
     <string name="password_hint">Enter password</string>
     <string name="forget_password">Forgot password?</string>
+    <string name="profile">Profile</string>
     <string name="create_acc">Create Account</string>
+    <string name="logout">Logout</string>
     <string name="register">Register</string>
     <string name="reset">Reset password</string>
     <string name="sub_head">Please register with zolo to continue</string>

@@ -10,12 +10,22 @@
         android:supportsRtl="true"
         android:name="com.zolo.MyApplication"
         android:theme="@style/AppTheme">
-        <activity android:name="com.zolo.MainActivity">
+        <activity android:name="com.zolo.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.SENDTO" />-->
+                <!--<data android:scheme="mailto" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name="com.zolo.ProfileActivity"
+            android:screenOrientation="portrait">
+
         </activity>
     </application>
 

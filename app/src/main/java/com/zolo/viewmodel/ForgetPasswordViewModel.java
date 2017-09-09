@@ -3,6 +3,8 @@ package com.zolo.viewmodel;
 import android.content.Context;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
@@ -29,6 +31,7 @@ public class ForgetPasswordViewModel extends BaseObservable  {
 
     @Bindable
     public String getEmail() {
+
         return this.email;
     }
     public void setEmail(String email) {
@@ -39,12 +42,9 @@ public class ForgetPasswordViewModel extends BaseObservable  {
     public void onResetClick(final View view) {
 
 
-        ((MainActivity) view.getContext()).reset();
+        ((MainActivity) view.getContext()).reset(email);
 
     }
-
-
-
 
 
 }

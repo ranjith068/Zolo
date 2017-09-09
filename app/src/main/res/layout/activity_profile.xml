@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profileViewModel"
+            type="com.zolo.viewmodel.ProfileViewModel" />
+
+        <variable
+            name="handler"
+            type="com.zolo.viewmodel.ProfileViewModel" />
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+
+                <TextView
+                    android:id="@+id/head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/profile"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="40sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context="com.zolo.view.ui.fragments.LoginFragment">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                        <ImageView
+                            android:id="@+id/callIV"
+                            android:layout_width="@dimen/iv_size"
+                            android:layout_height="@dimen/iv_size"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_call" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_toRightOf="@+id/callIV">
+
+                            <EditText
+                                android:id="@+id/phonenumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/phonenumber"
+                                android:textColorHint="@color/colorButton"
+                                android:inputType="textPhonetic|phone"
+                                android:text="@={profileViewModel.phonenumber}" />
+                        </android.support.design.widget.TextInputLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                        <ImageView
+                            android:id="@+id/nameIV"
+                            android:layout_width="@dimen/iv_size"
+                            android:layout_height="@dimen/iv_size"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_contacts" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_toRightOf="@+id/nameIV">
+
+                            <EditText
+                                android:id="@+id/name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/phonenumber"
+                                android:textColorHint="@color/colorButton"
+                                android:inputType="textPhonetic|phone"
+                                android:text="@={profileViewModel.name}" />
+                        </android.support.design.widget.TextInputLayout>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                        <ImageView
+                            android:id="@+id/emailIV"
+                            android:layout_width="@dimen/iv_size"
+                            android:layout_height="@dimen/iv_size"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_email" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_toRightOf="@+id/emailIV">
+
+                            <EditText
+                                android:id="@+id/email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/phonenumber"
+                                android:textColorHint="@color/colorButton"
+                                android:inputType="textPhonetic|phone"
+                                android:text="@={profileViewModel.email}" />
+                        </android.support.design.widget.TextInputLayout>
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        android:layout_marginLeft="@dimen/button_margin"
+                        android:layout_marginRight="@dimen/button_margin"
+                        android:background="@drawable/rounded_button_bg"
+                        android:onClick="@{handler::onLogoutClick}"
+                        android:text="@string/logout"
+                        android:textColor="@color/colorWhite" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</layout>
